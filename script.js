@@ -31,9 +31,9 @@ operationForm.addEventListener("submit", (e) => {
     prevNum = currNum;
     currNum = "";
   } else if (currNum === "" && operation !== "") {
-    const display = document.getElementById("display");
-    display.innerHTML = "ERROR: An operation was pressed twice in succession. \
-    Calculator result reset.";
+    const display = document.querySelector("div > p");
+    display.textContent = "ERROR: An operation was pressed twice in \
+    succession. Calculator result reset.";
       prevNum = "";
       currNum = "";
       operation = "";
@@ -50,16 +50,16 @@ operationForm.addEventListener("submit", (e) => {
   if (validOperations.has(currOperation)) {
     operation = currOperation;
   } else {
-    const display = document.getElementById("display");
-    display.innerHTML = "ERROR: An invalid operation was inputted. Calculator \
-    results cleared.";
+    const display = document.querySelector("div > p");
+    display.textContent = "ERROR: An invalid operation was inputted. \
+    Calculator results cleared.";
     prevNum = "";
     currNum = "";
     operation = "";
   }
   if (operation === "equal") {
-    const display = document.getElementById("display");
-    display.innerHTML = result;
+    const display = document.querySelector("div > p");
+    display.textContent = result;
     prevNum = result;
     currNum = "";
     operation = "";
@@ -73,9 +73,9 @@ const calcNums = document.getElementsByClassName("calc-num");
 for (let i = 0; i < calcNums.length; i++) {
   calcNums[i].addEventListener("click", () => {
     if (!needOperation) {
-      const display = document.getElementById("display");
+      const display = document.querySelector("div > p");
       currNum += (i + 1 === 10) ? 0 : i + 1;
-      display.innerHTML = currNum;
+      display.textContent = currNum;
     }
   });
 }
