@@ -15,13 +15,16 @@
 }
 
 #options {
-  display: block;
-  background-color: #fff;
+  width: 400px;
+  display: none;
+  background-color: #94a8ff;
+  padding: 10px;
   text-align: left;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font: 20px "Andale Mono", FreeMono, monospace;
 }
 
 #options-btn {
@@ -31,6 +34,9 @@
   padding: 30px;
   border-radius: 10px;
   border: 5px solid #000;
+  cursor: pointer;
+  background-color: #848484;
+  font: 20px "Andale Mono", FreeMono, monospace;
 }
 
 #display {

@@ -44,7 +44,7 @@ operationForm.addEventListener("submit", (e) => {
   }
 
   const validOperations = new Set(["add", "subtract", "multiply", "divide",
-    "equal"]);
+    "equal", "clear"]);
   const currOperation = document.getElementById(
     "operation-input").value.trim().toLowerCase();
   if (validOperations.has(currOperation)) {
@@ -64,6 +64,13 @@ operationForm.addEventListener("submit", (e) => {
     currNum = "";
     operation = "";
     needOperation = true;
+  } else if (operation === "clear") {
+    const display = document.querySelector("div > p");
+    display.textContent = "";
+    prevNum = "";
+    currNum = "";
+    operation = "";
+    result = 0;
   }
 });
 
@@ -81,10 +88,10 @@ for (let i = 0; i < calcNums.length; i++) {
 }
 
 const toggleOptions = () => {
-  const calcOptions = document.getElementById("calc-options");
-  if (calcOptions.style.display === "none") {
-    calcOptions.style.display = "block";
+  const options = document.getElementById("options");
+  if (options.style.display === "none") {
+    options.style.display = "block";
   } else {
-    calcOptions.style.display = "none";
+    options.style.display = "none";
   }
 }
