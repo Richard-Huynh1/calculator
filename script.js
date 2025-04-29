@@ -79,3 +79,12 @@ for (let i = 0; i < calcNums.length; i++) {
     }
   });
 }
+
+const toggleOptions = () => {
+  const calcOptions = document.getElementById("calc-options");
+  if (calcOptions.style.display === "none") {
+    calcOptions.style.display = "block";
+  } else {
+    calcOptions.style.display = "none";
+  }
+}
